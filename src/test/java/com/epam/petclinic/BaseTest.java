@@ -3,6 +3,7 @@ package com.epam.petclinic;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -21,5 +22,10 @@ public class BaseTest {
         URL hubUrl = new URL("http://localhost:4444/wd/hub");
 
         driver = new RemoteWebDriver(hubUrl, capabilities);
+    }
+
+    @After
+    public void tearDown(){
+        driver.quit();
     }
 }

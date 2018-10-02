@@ -12,7 +12,6 @@ public class PetclinicTests extends BaseTest {
         driver.get("http://10.23.26.9:8888/");
         driver.findElement(By.cssSelector("[href='\\/vets\\.html']")).click();
         assertThat(driver.findElement(By.cssSelector("#vets")).isDisplayed()).isTrue();
-        driver.quit();
     }
 
     @Test
@@ -20,6 +19,19 @@ public class PetclinicTests extends BaseTest {
         driver.get("http://10.23.26.9:8888/");
         driver.findElement(By.cssSelector("[href='\\/vets\\.html']")).click();
         assertThat(driver.findElement(By.cssSelector("#vets")).isDisplayed()).isFalse();
-        driver.quit();
+    }
+
+    @Test
+    public void addOwnerTest() {
+        driver.get("http://10.23.26.9:8888/");
+        driver.findElement(By.cssSelector("a[title='find owners']")).click();
+        driver.findElement(By.cssSelector("a.btn")).click();
+        driver.findElement(By.cssSelector("input#firstName")).sendKeys("TestFirstName");
+        driver.findElement(By.cssSelector("input#lastName")).sendKeys("TestLastName");
+        driver.findElement(By.cssSelector("input#address")).sendKeys("address");
+        driver.findElement(By.cssSelector("input#city")).sendKeys("city");
+        driver.findElement(By.cssSelector("input#telephone")).sendKeys("9379992");
+        driver.findElement(By.cssSelector(".btn-default")).click();
+        assertThat(driver.findElement(By.xpath("//h2[contains(text(),'Owner Information')]")).isDisplayed()).isTrue();
     }
 }
