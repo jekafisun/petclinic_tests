@@ -3,16 +3,16 @@ package com.epam.petclinic;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.testng.annotations.BeforeClass;
 
 public class BaseTest {
     WebDriver driver;
 
-    @BeforeClass
-    public void setUp() throws MalformedURLException {
+    @Before
+    public void setUpTest() throws MalformedURLException {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setBrowserName("chrome");
         capabilities.setVersion("68.0");

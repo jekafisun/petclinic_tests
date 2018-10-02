@@ -2,8 +2,8 @@ package com.epam.petclinic;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import org.junit.Test;
 import org.openqa.selenium.By;
-import org.testng.annotations.Test;
 
 public class PetclinicTests extends BaseTest {
 
