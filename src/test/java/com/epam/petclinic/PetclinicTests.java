@@ -8,14 +8,14 @@ import org.openqa.selenium.By;
 public class PetclinicTests extends BaseTest {
 
     @Test
-    public void test1() {
+    public void veterinariansTest() {
         driver.get("http://10.23.26.9:8888/");
         driver.findElement(By.cssSelector("[href='\\/vets\\.html']")).click();
         assertThat(driver.findElement(By.cssSelector("#vets")).isDisplayed()).isTrue();
     }
 
     @Test
-    public void test2() {
+    public void failingVeterinariansTest() {
         driver.get("http://10.23.26.9:8888/");
         driver.findElement(By.cssSelector("[href='\\/vets\\.html']")).click();
         assertThat(driver.findElement(By.cssSelector("#vets")).isDisplayed()).isFalse();
